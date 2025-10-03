@@ -1,36 +1,37 @@
-import os
-from nicegui import ui, app
-from starlette.middleware.sessions import SessionMiddleware
+#!/usr/bin/env python3
+from nicegui import ui
 
-SECRET = os.getenv('APP_SECRET', 'change-me')
-PASSWORD = os.getenv('APP_PASSWORD', 'letmein')
-PORT = int(os.getenv('PORT', '8080'))
+SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"]
 
-app.add_middleware(SessionMiddleware, secret_key=SECRET)
+with ui.header().classes(replace='row items-center w-full') as header:
+    ui.image('logo.jpeg').classes('w-12 h-12 mr-auto')
+    with ui.tabs() as tabs:
+        ui.tab('אודות')
+        ui.tab('הזמנות')
+        ui.tab('בית')
 
-def signed_in() -> bool:
-    return app.storage.user.get('signed_in', False)
 
-@ui.page('/')
-def index():
-    if not signed_in():
-        with ui.card().classes('max-w-sm mx-auto mt-20'):
-            ui.label('כניסה').classes('text-xl')
-            pwd = ui.input('סיסמה', password=True, password_toggle_button=True)
-            ui.button('התחבר', on_click=lambda: try_login(pwd.value))
-            ui.label('רמז: תשנה את APP_PASSWORD בסביבה').classes('text-xs text-gray-500')
-        return
-    ui.label('שלום! האתר פעיל 😊')
-    ui.button('התנתק', on_click=logout)
+with ui.tab_panels(tabs, value='בית',).classes('w-full h-full '):
+    with ui.tab_panel('בית'):
+        ui.label('תוכן של ביתv').classes('self-end text-right w-full')
+    with ui.tab_panel('הזמנות'):
+        # with ui.row(wrap=True, align_items='center').classes('w-full justify-center'):
+        ui.label("1")
+            # with ui.stepper().props('vertical').classes('w-1/2') as stepper:
+                # with ui.step('פרטים אישיים').props('icon=person').classes('text-right'):
+                    # ui.input('שם המזמין').classes('w-full text-right')
+                    # ui.number('כמה אנשים אתם?').classes('w-full text-right')
+                    # ui.input('אימייל').classes('w-full text-right')
+                    # ui.button('Next', on_click=stepper.next)
+                # with ui.step('פרטי הזמנה').props('icon=calendar').classes('text-right'):
+                    # ui.date('תאריך הזמנה').classes('text-right')
+                    # ui.time('שעת הזמנה').classes('text-right')
+                    # with ui.dropdown_button("ניסיון", auto_close=True).classes('w-full text-right'):
+                        # ui.item('מתחילים')
+                        # ui.item('מתקדמים')
+                        # ui.item('סופר חנונים')
+            # ui.label("2")
+    with ui.tab_panel('אודות'):
+        ui.label('תוכן של אודות ').classes('self-end text-right w-full')
 
-def try_login(p: str):
-    if p == PASSWORD:
-        app.storage.user['signed_in'] = True
-        ui.navigate.reload()
-    else:
-        ui.notify('סיסמה שגויה', color='negative')
-
-def logout():
-    app.storage.user['signed_in'] = False
-    ui.navigate.reload()
-ui.run(host='0.0.0.0', port=PORT)
+ui.run()

@@ -1,0 +1,294 @@
+[
+    {
+        "kind": "calendar#event",
+        "etag": "\"3314723296092000\"",
+        "id": "eseodcd6m2jm8",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ZXNlb2RjZDZtMmptOF8yMDIxMDgwNiBobmlmZTNwdGkxcjczZnQ4NWZwdGZmN3RpNEBn",
+        "created": "2022-07-09T10:14:08.000Z",
+        "updated": "2022-07-09T10:14:08.046Z",
+        "summary": "תמר יום הולדת",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "date": "2021-08-06"
+        },
+        "end": {
+            "date": "2021-08-07"
+        },
+        "recurrence": [
+            "RRULE:FREQ=YEARLY;WKST=MO;INTERVAL=1"
+        ],
+        "iCalUID": "eseodcd6m2jm8@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": false
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3461915402512000\"",
+        "id": "0pdnd2m0drmb2jm57snqd5pjh4",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MHBkbmQybTBkcm1iMmptNTdzbnFkNXBqaDRfMjAyNDExMjEgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2024-11-07T05:35:01.000Z",
+        "updated": "2024-11-07T05:35:01.256Z",
+        "summary": "יום הולדת לאמא",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "date": "2024-11-21"
+        },
+        "end": {
+            "date": "2024-11-22"
+        },
+        "recurrence": [
+            "RRULE:FREQ=YEARLY"
+        ],
+        "transparency": "transparent",
+        "iCalUID": "0pdnd2m0drmb2jm57snqd5pjh4@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": false
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3466516932766000\"",
+        "id": "vkbgd9cb559q953suhh18jsjic",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dmtiZ2Q5Y2I1NTlxOTUzc3VoaDE4anNqaWNfMjAyNDEyMDNUMDIwMDAwWiBobmlmZTNwdGkxcjczZnQ4NWZwdGZmN3RpNEBn",
+        "created": "2024-12-03T20:41:06.000Z",
+        "updated": "2024-12-03T20:41:06.383Z",
+        "summary": "ימולדת לענבר",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2024-12-03T02:00:00Z",
+            "timeZone": "Asia/Hebron"
+        },
+        "end": {
+            "dateTime": "2024-12-03T03:00:00Z",
+            "timeZone": "Asia/Hebron"
+        },
+        "recurrence": [
+            "RRULE:FREQ=YEARLY"
+        ],
+        "iCalUID": "vkbgd9cb559q953suhh18jsjic@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3507413956864254\"",
+        "id": "pu7qra77s746p26doro9kvm6ao",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=cHU3cXJhNzdzNzQ2cDI2ZG9ybzlrdm02YW8gaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-07-28T12:49:38.000Z",
+        "updated": "2025-07-28T12:49:38.432Z",
+        "summary": "אייקון",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "date": "2025-10-08"
+        },
+        "end": {
+            "date": "2025-10-10"
+        },
+        "transparency": "transparent",
+        "iCalUID": "pu7qra77s746p26doro9kvm6ao@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": false
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3507414061100670\"",
+        "id": "3ck200qla4pr16hk9kpbebate4",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M2NrMjAwcWxhNHByMTZoazlrcGJlYmF0ZTQgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-07-28T12:50:30.000Z",
+        "updated": "2025-07-28T12:50:30.550Z",
+        "summary": "Off-Season",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "date": "2025-10-08"
+        },
+        "end": {
+            "date": "2025-10-10"
+        },
+        "transparency": "transparent",
+        "iCalUID": "3ck200qla4pr16hk9kpbebate4@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": false
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3512841966954686\"",
+        "id": "9gor3h61lnafjtbg2oddu6vejs",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=OWdvcjNoNjFsbmFmanRiZzJvZGR1NnZlanMgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-08-28T22:42:52.000Z",
+        "updated": "2025-08-28T22:43:03.477Z",
+        "summary": "לבטל Apple TV",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2025-11-26T10:00:00Z",
+            "timeZone": "Asia/Hebron"
+        },
+        "end": {
+            "dateTime": "2025-11-26T11:00:00Z",
+            "timeZone": "Asia/Hebron"
+        },
+        "iCalUID": "9gor3h61lnafjtbg2oddu6vejs@google.com",
+        "sequence": 1,
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3513947524767486\"",
+        "id": "qd4esrio6cukr91lpa0fqbg33k",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=cWQ0ZXNyaW82Y3VrcjkxbHBhMGZxYmczM2sgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-09-04T08:16:02.000Z",
+        "updated": "2025-09-04T08:16:02.383Z",
+        "summary": "סיום ללמוד",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2026-05-31T09:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "end": {
+            "dateTime": "2026-05-31T10:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "iCalUID": "qd4esrio6cukr91lpa0fqbg33k@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3513970396183390\"",
+        "id": "hbvo50e2mc1tcmqm7j82dssv7g",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=aGJ2bzUwZTJtYzF0Y21xbTdqODJkc3N2N2cgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-09-04T11:26:37.000Z",
+        "updated": "2025-09-04T11:26:38.091Z",
+        "summary": "קבלת תעודות",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2025-10-17T09:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "end": {
+            "dateTime": "2025-10-17T10:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "iCalUID": "hbvo50e2mc1tcmqm7j82dssv7g@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    },
+    {
+        "kind": "calendar#event",
+        "etag": "\"3516553781814334\"",
+        "id": "j9usqs3g4cr85o3mlblj71thos",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=ajl1c3FzM2c0Y3I4NW8zbWxibGo3MXRob3MgaG5pZmUzcHRpMXI3M2Z0ODVmcHRmZjd0aTRAZw",
+        "created": "2025-09-19T10:14:42.000Z",
+        "updated": "2025-09-19T10:14:50.907Z",
+        "summary": "לוודא 150₪ מיובל",
+        "creator": {
+            "email": "maayan.aharonn@gmail.com"
+        },
+        "organizer": {
+            "email": "hnife3pti1r73ft85fptff7ti4@group.calendar.google.com",
+            "displayName": "Maayan’s iPhone",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2025-10-10T11:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "end": {
+            "dateTime": "2025-10-10T12:00:00Z",
+            "timeZone": "Asia/Jerusalem"
+        },
+        "iCalUID": "j9usqs3g4cr85o3mlblj71thos@google.com",
+        "sequence": 0,
+        "reminders": {
+            "useDefault": true
+        },
+        "eventType": "default"
+    }
+]
