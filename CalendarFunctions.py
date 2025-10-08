@@ -23,11 +23,13 @@ event_result = service.events().list(
    calendarId=calenderID,
 ).execute()
 events = event_result.get("items", [])
-#for event in events:
+# for event in events:
 #    start = event["start"].get("dateTime", event["start"].get("date"))
 #    print(start, event["summary"])
 # print(event_result.get("items", []))
-def get_open_on_Day(day):
+def get_open_on_Day(SelectedDay):
+    date=tuple(map(int,SelectedDay.split("-")))
+    day = datetime.date(date[0], date[1], date[2])
     time_min = datetime.datetime.combine(day, datetime.time.min).isoformat() + "Z"
     time_max = datetime.datetime.combine(day, datetime.time.max).isoformat() + "Z"
    
@@ -43,9 +45,10 @@ def get_open_on_Day(day):
     appointments = []
     for e in events:
         start_str = e["start"].get("dateTime", e["start"].get("date"))
+        # start_dt = datetime.fromisoformat(start_str.replace("Z", "+00:00"))
         start_dt = datetime.datetime.fromisoformat(start_str)
         start = start_dt.strftime("%H:%M")
         appointments.append([start, e.get("summary")])
     return appointments
-day = datetime.date(2025, 10, 15)
-print(get_open_on_Day(day))
+
+
