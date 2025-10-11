@@ -16,11 +16,18 @@ class Demo:
         self.number = 1
 
 demo = Demo()
-slots= None
+slots= ["no slots yet", ""]
+selection = None
 def updateSlots(date):
     global slots
+    global selection
+    selection = ui.select(options=slots)
+    
+    # global selection
     slots = CalendarFunctions.get_open_on_Day(date) if date else ['no slots today you fool']
-    ui.select(options=slots)
+    selection.bind_value(slots)
+    # selection.value = slots[0] if slots else None
+    # selection = ui.select(options=slots)
     # for i in range(len(slots)):
     #     ui.button(text=f'{slots[i]}')
     ui.notify(f'Available slots updated for {date}', position='top-left')
