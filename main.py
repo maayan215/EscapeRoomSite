@@ -37,6 +37,11 @@ def updateSlots(date, select):
         select.value = slots[0]
     select.update()
 
+def order():
+    event = CalendarFunctions.create_event(demo.name, demo.email, demo.phone, demo.amount, demo.date, demo.time, demo.difficulty)
+    ui.notify(f'event created at time {event.get("start").get("dateTime")}', position='top-left')
+    stepper.next()
+    
 with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
     with ui.tab_panel('בית'):
         ui.label('תוכן של בית').classes('self-end text-right w-full')
@@ -46,11 +51,21 @@ with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
             with ui.stepper().props('vertical').classes('w-1/2') as stepper:
                 with ui.step('פרטים אישיים').props('icon=person').classes('text-right'):
 
-                    name = ui.input('שם המזמין',).bind_value_to(demo, 'name').classes('w-full text-right')
-                    phone = ui.input('טלפון',).bind_value_to(demo, 'phone').classes('w-full text-right')
-                    amount = ui.number('כמה אנשים אתם?').bind_value_to(demo, 'amount').classes('w-full text-right')
-                    email = ui.input('אימייל',).bind_value_to(demo, 'email').classes('w-full text-right')
-                    ui.button('הבא', on_click=stepper.next)
+                    name = ui.input('שם המזמין',on_change= lambda: validate_inputs()).bind_value_to(demo, 'name').classes('w-full text-right')
+                    phone = ui.input('טלפון',on_change= lambda: validate_inputs()).bind_value_to(demo, 'phone').classes('w-full text-right')
+                    # amount = ui.number('כמה אנשים אתם?').bind_value_to(demo, 'amount').classes('w-full text-right')
+                    amount = ui.select([1, 2, 3],label="כמה אנשים אתם?", value=1).bind_value_to(demo, 'amount').classes('w-full text-right')
+                    email = ui.input('אימייל',on_change= lambda: validate_inputs()).bind_value_to(demo, 'email').classes('w-full text-right')
+                    v = False
+                    next_btn = ui.button('הבא', on_click=stepper.next).props('color=primary disabled')
+                    def validate_inputs():
+                        all_filled = all(field.value.strip() for field in [name, phone, amount, email])
+                        if all_filled:
+                            next_btn.enable()
+
+                    
+                    
+
                 with ui.step('פרטי הזמנה').props('icon=calendar').classes('text-right'):
                     with ui.row():
                         # date = "2025-10-16"
@@ -58,7 +73,7 @@ with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
                         ui.separator().props('vertical')
                         with ui.column():
                             select = ui.select(['אין תורים היום טיפש'], label='תורים', value='אין תורים היום טיפש').bind_value_to(demo, 'time').classes('w-auto')
-                            ui.select(['מתחילים', 'מתקדמים', 'סופר חנונים'], label='רמת קושי').bind_value_to(demo, 'difficulty').classes('text-center')
+                            ui.select(['מתחילים', 'מתקדמים', 'סופר חנונים'], label='רמת קושי', value='מתחילים').bind_value_to(demo, 'difficulty').classes('text-center')
                     with ui.row():
                         ui.button('הבא', on_click=stepper.next)
                         ui.button('אחורה', on_click=stepper.previous)
@@ -74,6 +89,9 @@ with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
                             ui.label().bind_text_from(demo, 'amount').classes('text-left')
                             ui.label(':מספר אנשים').classes('text-right')
 
+                            ui.label().bind_text_from(demo, 'difficulty').classes('text-left')
+                            ui.label(':רמת קושי').classes('text-right')
+
                             ui.label().bind_text_from(demo, 'email').classes('text-left')
                             ui.label(':אימייל').classes('text-right')
                             
@@ -86,16 +104,19 @@ with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
                             ui.label().bind_text_from(demo, 'time').classes('text-left')
                             ui.label(':שעת הזמנה').classes('text-right')
 
-                            ui.label().bind_text_from(demo, 'difficulty').classes('text-left')
-                            ui.label(':רמת קושי').classes('text-right')
 
 
                     with ui.row():
                         # ui.button('הזמן', on_click=stepper.next, onclick=lambda: )
-                        ui.button('הזמן', on_click=lambda: CalendarFunctions.create_event(demo.name, demo.email, demo.phone, demo.amount, demo.date, demo.time, demo.difficulty)).props('color=primary')
+                        # ui.button('הזמן', on_click=lambda: CalendarFunctions.create_event(demo.name, demo.email, demo.phone, demo.amount, demo.date, demo.time, demo.difficulty), on_click = stepper.next).props('color=primary')
+                        ui.button('הזמן', on_click= lambda: order()).props('color=primary')
+                        # ui.button('test', on_click=lambda: print(CalendarFunctions.get_Specific_Event(demo.date, demo.time)))
                         ui.button('אחורה', on_click=stepper.previous)
+                with ui.step('הזמנתך נקלטה!').props('icon=thumb_up').classes('text-right'):
+                    ui.label('תודה רבה שהזמנתם אצלנו! נתראה בקרוב :)').classes('self-end text-right w-full')
+                    ui.button('קישור להזמנה', on_click=lambda: ui.navigate.to(CalendarFunctions.make_public_google_calendar_link(demo.date, demo.time))).props('color=primary')
+                    # ui.button('חזרה להתחלה', on_click=stepper.reset).props('color=primary')
+                    ui.button('back', on_click=stepper.previous)
     with ui.tab_panel('אודות'):
         ui.label('תוכן של אודות ').classes('self-end text-right w-full')
-
-ui.run()
-#changing changes
+ui.run(host='0.0.0.0', port=8080, title='Escape Room MT Digital', favicon='logo.jpeg')

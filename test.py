@@ -1,13 +1,8 @@
-from nicegui import ui
+import CalendarFunctions
+date = "2025-10-16"
+time = "14:30"
 
-items = ['1', '2', '3']
-selection = ui.select(options=items)
 
-def update_values():
-    new_items = ['4', '5']
-    selection.options = new_items
-    selection.update()
 
-# ui.button('update', on_click=lambda: selection.bind_value_from(globals(), 'items'))
-ui.button('update', on_click=lambda: update_values())
-ui.run()
+# holder = CalendarFunctions.get_Specific_Event(date, time)
+# CalendarFunctions.service.events().delete(calendarId=CalendarFunctions.calenderID, eventId=holder[0]['id']).execute()
