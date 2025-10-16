@@ -98,3 +98,4 @@ with ui.tab_panels(tabs, value='הזמנות',).classes('w-full h-full '):
         ui.label('תוכן של אודות ').classes('self-end text-right w-full')
 
 ui.run()
+#changing changes
