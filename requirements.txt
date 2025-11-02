@@ -1,1 +1,4 @@
 nicegui==2.*
+nicegui
+uvicorn[standard]
+gunicorn
