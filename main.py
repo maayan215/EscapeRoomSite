@@ -304,6 +304,7 @@ def reservation_page():
                         ui.button('צפייה בלוח השנה', on_click=lambda: ui.navigate.to(CalendarFunctions.make_public_google_calendar_link(demo.date, demo.time))).classes('mt-4 hover:text-[#ffb703] bg-gradient-to-r from-[#00b4d8] to-[#0090b0] text-white rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')
                         ui.link(text='חזרה', target='/').props('flat').classes('mt-4 text-white border border-[#00b4d8]/30 rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')
                 
+<<<<<<< HEAD
 if __name__ == "__main__":
     ui.run(
         host='0.0.0.0',
@@ -311,3 +312,7 @@ if __name__ == "__main__":
         reload=False
     )
                 
+=======
+                
+ui.run(native=False)
+>>>>>>> 52f29d99e6bb85e3b1e4d90e4fb56b95ad343f5e
