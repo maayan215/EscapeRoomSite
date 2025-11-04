@@ -2,3 +2,8 @@ nicegui==2.*
 nicegui
 uvicorn[standard]
 gunicorn
+python-dateutil
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
