@@ -310,13 +310,11 @@ def reservation_page():
 
 
 
-# ✅ Create FastAPI app manually
-app = FastAPI()
+app = ui.get_app()  
 
-# ✅ Mount NiceGUI onto FastAPI
-ui.run(
-    app=app,
-    host='0.0.0.0',
-    port=int(os.getenv('PORT', 8080)),
-    reload=False
-)        
+if __name__ == '__main__':
+    ui.run(
+        host='0.0.0.0',
+        port=int(os.getenv('PORT', 8080)),
+        reload=False,
+    )
