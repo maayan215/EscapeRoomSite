@@ -2,6 +2,9 @@
 from nicegui import ui
 import CalendarFunctions
 import os
+from fastapi import FastAPI
+from nicegui import ui
+import os
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
 def top_panel():
@@ -305,19 +308,15 @@ def reservation_page():
                         ui.link(text='חזרה', target='/').props('flat').classes('mt-4 text-white border border-[#00b4d8]/30 rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')
 
 
-from fastapi import FastAPI
-import os
-
-fastapi_app = FastAPI()
-ui.configure(app=fastapi_app)
 
 
-app = fastapi_app
+# ✅ Create FastAPI app manually
+app = FastAPI()
 
-if __name__ == "__main__":
-    ui.run(
-        host='0.0.0.0',
-        port=int(os.getenv('PORT', 8080)),
-        reload=False
-    )
-                
+# ✅ Mount NiceGUI onto FastAPI
+ui.run(
+    app=app,
+    host='0.0.0.0',
+    port=int(os.getenv('PORT', 8080)),
+    reload=False
+)        
