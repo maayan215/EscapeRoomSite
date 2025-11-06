@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 from nicegui import ui
 import CalendarFunctions
-import os
-from fastapi import FastAPI
+
 from nicegui import ui
 import os
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
@@ -231,7 +230,7 @@ def reservation_page():
                     email = ui.input('אימייל', on_change=lambda: validate_inputs(next_btn)).bind_value_to(demo, 'email').classes('w-full px-2 py-2 text-right rounded-xl border border-[#00b4d8]/30 bg-gradient-to-r from-[#23272F] to-[#141a28] text-white text-xl shadow-lg hover-lift')
                     
                     next_btn = ui.button('הבא', on_click=stepper.next).classes('mt-4 bg-gradient-to-r from-[#00b4d8] to-[#0090b0] hover:from-[#0090b0] hover:to-[#00b4d8] text-white rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')
-                    # next_btn.disable()
+                    next_btn.disable()
 
                     def validate_inputs(button):
                         all_filled = all(field.value.strip() for field in [name, phone, email])
@@ -241,7 +240,7 @@ def reservation_page():
                             button.disable()
 
                 with ui.step('פרטי הזמנה', icon="person").classes('text-right text-white'):
-                    ui.label('בחרו תאריך, שעה ורמת קושי.').classes('text-lg text-gray-300 mb-4 text-right')
+                    ui.label('בחרו תאריך, שעה ורמת קושי').classes('text-lg text-gray-300 mb-4 text-right')
                     with ui.column().classes('w-full ml-6 items-center text-right'):
                         chooseDate = ui.date('תאריך הזמנה', on_change=lambda: updateSlots(chooseDate.value, select)).bind_value_to(demo, 'date').classes('text-right bg-[#2a2a2a] bg-gradient-to-r from-[#23272F] to-[#141a28] rounded-lg text-white items-left hover-lift')
                         select = ui.select([DEFAULT_SLOT_TEXT], label='בחרו שעה', value=DEFAULT_SLOT_TEXT).bind_value_to(demo, 'time').classes('w-full text-right bg-gradient-to-r from-[#23272F] to-[#141a28] border border-[#00b4d8]/30 rounded-xl px-4 py-3 text-white focus:border-[#00b4d8] focus:ring-2 focus:ring-[#00b4d8]/20 transition-all duration-300 hover-lift')
@@ -260,7 +259,7 @@ def reservation_page():
                     with ui.row().classes('justify-between mt-6 text-right'):
                         ui.button('אחורה', on_click=stepper.previous).props('flat').classes('mt-4 text-white border border-[#00b4d8]/30 rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')
                         next_button = ui.button('הבא', on_click=stepper.next).classes('mt-4 bg-gradient-to-r from-[#00b4d8] to-[#0090b0] hover:from-[#0090b0] hover:to-[#00b4d8] text-white rounded-xl px-8 py-3 text-lg shadow-lg hover-lift transition-all duration-300 font-medium')                    
-                    # next_button.disable()
+                    next_button.disable()
 
                     def validate_order_inputs():
                         all_filled = chooseDate.value is not None and demo.time not in [DEFAULT_SLOT_TEXT, NO_SLOTS_TEXT] != ''
@@ -310,11 +309,4 @@ def reservation_page():
 
 
 
-app = ui.get_app()  
-
-if __name__ == '__main__':
-    ui.run(
-        host='0.0.0.0',
-        port=int(os.getenv('PORT', 8080)),
-        reload=False,
-    )
+ui.run()
